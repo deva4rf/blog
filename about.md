@@ -1,15 +1,8 @@
----
-layout: page
-title: About
-permalink: /about/
----
 
-Some information about you!
 
-### More Information
+### Who am I ? 
 
-A place to include any other types of information that you'd like to include about yourself.
-
+Just an InfoSec geek !
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[deva4rf@gmail.com](mailto:deva4rf@gmail.com)
