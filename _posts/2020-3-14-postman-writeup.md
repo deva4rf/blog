@@ -126,13 +126,13 @@ Port 10000 is running **Webmin v1.910** so let's search if it has public vulnera
 
     searchsploit Webmin 1.910
 
-![Postman/searchsploit.png](Postman/searchsploit.png)
+![../Postman/searchsploit.png](Postman/searchsploit.png)
 
 There is a Remote Command Execution Vulnerability and has a Metasploit module for it. Let's check the module code for further information.
 
     searchsploit -x exploits/linux/remote/46984.rb
 
-![Postman/rce.png](Postman/rce.png)
+![Postman/rce.png](../Postman/rce.png)
 
 Reading the vulnerability, a **username & password** is required. the vulnerability requires authentication so we can't get really much out of it now. Maybe later?.
 
