@@ -1,10 +1,4 @@
----
-layout: post
-title: 'Postman Writeup HTB'
-date: 'Sat 14 Mar 2020 03:34:57 PM WET'
-categories: linux
----
-
+# Postman
 
 **Contents**
 
@@ -126,23 +120,23 @@ Port 10000 is running **Webmin v1.910** so let's search if it has public vulnera
 
     searchsploit Webmin 1.910
 
-![../Postman/searchsploit.png](Postman/searchsploit.png)
+![/images/Postman/searchsploit.png](/images/Postman/searchsploit.png)
 
 There is a Remote Command Execution Vulnerability and has a Metasploit module for it. Let's check the module code for further information.
 
     searchsploit -x exploits/linux/remote/46984.rb
 
-![Postman/rce.png](../Postman/rce.png)
+![/images/Postman/rce.png](/images/Postman/rce.png)
 
 Reading the vulnerability, a **username & password** is required. the vulnerability requires authentication so we can't get really much out of it now. Maybe later?.
 
 **Exploring the website**
 
-![Postman/port10000-web.png](Postman/port10000-web.png)
+![/images/Postman/port10000-web.png](/images/Postman/port10000-web.png)
 
 the Webmin SSL mode is enabled in the webmin config file, so we should navigate the website using HTTPS 
 
-![Postman/https.png](Postman/https.png)
+![/images/Postman/https.png](/images/Postman/https.png)
 
 Since we are doing HTB, Brute forcing credentials won't give you anything good. **You should try brute forcing credentials if you are doing a real world assessment.**
 
@@ -152,7 +146,7 @@ Nothing more we can do here, let's test for port **80**
 
 Port 80 main page:
 
-![Postman/port-80-main.png](Postman/port-80-main.png)
+![/images/Postman/port-80-main.png](/images/Postman/port-80-main.png)
 
 Nothing Important we can use from the main page, the website seems to be a static (*has no functions*) website. It is gobuster time!
 
@@ -180,7 +174,7 @@ then try to connect to redis anonymously
 
     redis-cli -h 10.10.10.160
 
-![Postman/redis.png](Postman/redis.png)
+![/images/Postman/redis.png](/images/Postman/redis.png)
 
 We established a connection successfully and executed **info** command , the command will list so much information about the server.
 
@@ -202,7 +196,7 @@ executing
 
     config get dir 
 
-![Postman/ssh-folder.png](Postman/ssh-folder.png)
+![/images/Postman/ssh-folder.png](/images/Postman/ssh-folder.png)
 
 Well that is great we are on .**ssh** **folder** by **default** and we assume that the **username** is **redis**
 
@@ -213,7 +207,7 @@ Well that is great we are on .**ssh** **folder** by **default** and we assume th
     2- (echo -e "\n\n"; cat ~/.ssh/id_rsa.pub; echo -e "\n\n") > foo.txt 
     3- cat foo.txt | redis-cli -h 10.10.10.160 -x set crackit
 
-![Postman/added-key.png](Postman/added-key.png)
+![/images/Postman/added-key.png](/images/Postman/added-key.png)
 
 now we added our SSH pub  to a key called crackit , we then should add the **crackit key** value to **authorized_key** file on the server
 
@@ -225,9 +219,9 @@ now we added our SSH pub  to a key called crackit , we then should add the **cra
     
     ssh -i id_rsa redis@10.10.10.160
 
-![Postman/login-user.png](Postman/login-user.png)
+![/images/Postman/login-user.png](/images/Postman/login-user.png)
 
-![Postman/Matt.png](Postman/Matt.png)
+![/images/Postman/Matt.png](/images/Postman/Matt.png)
 
 there is another user on the box called **Matt**
 
@@ -247,9 +241,9 @@ Uploaded [LinEnum.sh](http://linenum.sh) to the box.
 
 From the output we see that there is a backup of **RSA** key left at /**opt**/ folder
 
-![Postman/id_rsa.bak.png](Postman/id_rsa.bak.png)
+![/images/Postman/id_rsa.bak.png](/images/Postman/id_rsa.bak.png)
 
-![Postman/id.png](Postman/id.png)
+![/images/Postman/id.png](/images/Postman/id.png)
 
 Copy the RSA to our machine to start craking it. we will use **John** to crack the has but first we need to transfer the key to john format.
 
@@ -257,7 +251,7 @@ I use [sshng2john](https://github.com/truongkma/ctf-tools/blob/master/John/run/s
 
     python [ssh2john.py](http://ssh2john.py/) id_bak | tee id_bak.hash
 
-![Postman/sshn2joh.png](Postman/sshn2joh.png)
+![/images/Postman/sshn2joh.png](/images/Postman/sshn2joh.png)
 
 **DON'T FORGET :** open the file, **delete** the number in the first line in my case it is **24**
 
@@ -265,21 +259,21 @@ start cracking the hash
 
     john --format=SSH --wordlist=/usr/share/wordlists/rockyou.txt id_bak.hash
 
-![Postman/cracker.png](Postman/cracker.png)
+![/images/Postman/cracker.png](/images/Postman/cracker.png)
 
 The passphrase is : **computer2008**
 
 if we tried  SSHing using the private key and passphrase we fail.
 
-![Postman/ssh_fail.png](Postman/ssh_fail.png)
+![/images/Postman/ssh_fail.png](/images/Postman/ssh_fail.png)
 
 maybe the passphrase is also a **Matt** password ?
 
-![Postman/matt.png](Postman/matt.png)
+![/images/Postman/matt.png](/images/Postman/matt.png)
 
 And we are in ! here is **User** **flag** 
 
-![Postman/matt-flag.png](Postman/matt-flag.png)
+![/images/Postman/matt-flag.png](/images/Postman/matt-flag.png)
 
 2- **Elevate priv from Matt to Root**
 
@@ -296,11 +290,11 @@ The vulnerability has a **metasploit** module so let's try it.
 
 Here is the options of the module 
 
-![Postman/metasploit.png](Postman/metasploit.png)
+![/images/Postman/metasploit.png](/images/Postman/metasploit.png)
 
 Fill the options like this 
 
-![Postman/options.png](Postman/options.png)
+![/images/Postman/options.png](/images/Postman/options.png)
 
 when you run the module, it fails why ? Remember that the webmin ssl is enabled ? so we must set **SSL to true** in the module options 
 
@@ -309,7 +303,7 @@ when you run the module, it fails why ? Remember that the webmin ssl is enabled 
 
 Now the module works! and we got a root shell :)  here is the root flag.
 
-![Postman/root.png](Postman/root.png)
+![/images/Postman/root.png](/images/Postman/root.png)
 
 ### References & Further Reading
 
