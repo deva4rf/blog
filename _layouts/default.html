@@ -1,53 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
-    {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
+    {%- include head.html -%}
   </head>
-
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+    <main class="container">
+      <section class="about">
+        <a href="/"><img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
+        <h2 id="title">
+          <a href="/">{{ site.plainwhite.name }}</a>
+        </h2>
+        <p class="tagline">{{ site.plainwhite.tagline }}</p>
+        <ul class="social">
+          {%- if site.plainwhite.social_links.github -%}
+            <a href="https://github.com/{{ site.plainwhite.social_links.github }}">
+              <li>
+                <i class="icon-github-circled"></i>
+              </li>
+            </a>
+          {%- endif -%}
+          {%- if site.plainwhite.social_links.linkedIn -%}
+            <a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}">
+              <li>
+                <i class="icon-linkedin-squared"></i>
+              </li>
+            </a>
+          {%- endif -%}
+          {%- if site.plainwhite.social_links.twitter -%}
+            <a href="https://twitter.com/{{ site.plainwhite.social_links.twitter }}">
+              <li>
+                <i class="icon-twitter-squared"></i>
+              </li>
+            </a>
+          {%- endif -%}
+        </ul>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+        {%- if site.plainwhite.navigation -%}
+          <nav class="navigation">
+            <ul>
+              {% for link in site.plainwhite.navigation %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
           </nav>
-        </header>
-   
+        {%- endif -%}
 
-      </div>
-    </div>
+        <p>&copy;
+          {{ "now" | date: "%Y" }}</p>
+      </section>
+      <section class="content">
+        {{ content }}
+      </section>
+    </main>
+    {%- if site.plainwhite.analytics_id -%}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
+      <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-<div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-           <div class="center"> <script src="https://www.hackthebox.eu/badge/26796"></script> </div>
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-    
-
-    {% include analytics.html %}
+		gtag('config', '{{ site.plainwhite.analytics_id }}');
+	</script>
+    {%- endif -%}
   </body>
 </html>
