@@ -1,6 +1,7 @@
 #
 # This file contains configuration flags to customize your site
 #
+remote_theme: thelehhman/plainwhite-jekyll
 
 # Name of your site (displayed in the header)
 name: 3r3bu5
