@@ -6,6 +6,7 @@ $linkColor: #0a59b0;
 $mobileW: 768px;
 $smallMobileW: 480px;
 $bigScreenW: 1600px;
+$leftWidth: 220px;
 
 
 *,
@@ -68,7 +69,6 @@ main {
   .content {
     @media screen and (min-width: $mobileW + 1) {
       max-width: calc(100% - #{$leftWidth});
-     
       width: 100%;
     }
   }
