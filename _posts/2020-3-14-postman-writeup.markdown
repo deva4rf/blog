@@ -219,7 +219,6 @@ now we added our SSH pub  to a key called crackit , we then should add the **cra
 
 ![/images/Postman/login-user.png](/images/Postman/login-user.png)
 
-![/images/Postman/Matt.png](/images/Postman/Matt.png)
 
 there is another user on the box called **Matt**
 
