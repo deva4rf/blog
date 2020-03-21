@@ -1,6 +1,5 @@
 
 
-# /images/forest
 
 ![/images/forest/mac-card.png](/images/forest/mac-card.png)
 
