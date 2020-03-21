@@ -135,7 +135,7 @@ From the output, we extracted some information.
 3. From the services running we are dealing with an **Active Directory domain controller**.
 4. the domain name is **htb.local**
 
-Read this first if you don't know what Active Directory & Kerberos are and how they work.
+Read **[ THIS ](#extra)** first if you don't know what Active Directory & Kerberos are and how they work.
 
 ### 2. Scanning
 
