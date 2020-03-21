@@ -2,11 +2,11 @@
 
 Short Summary
 
-- Phase 1 | Reconnaissance.
+- Phase 1   Reconnaissance.
 
     1.1 Running nmap.
 
-- Phase 2 | Scanning.
+- Phase 2   Scanning.
     - 2.1 Scanning port **10000.**
 
         2.1.1 Search for CVEs.
@@ -25,11 +25,11 @@ Short Summary
 
         2.3.1.1 add our SSH  key to authorized_key on the machine.
 
-- Phase 3 | Gaining Access.
+- Phase 3   Gaining Access.
 
     3.1 SSHing into the box as redis. 
 
-- Phase 4 | Elevate privileges.
+- Phase 4  Elevate privileges.
 
     4.1 From redis to Matt
 

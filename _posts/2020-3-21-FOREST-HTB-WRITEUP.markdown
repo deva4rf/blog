@@ -1,6 +1,5 @@
 
 
-# /images/forest
 
 ![/images/forest/mac-card.png](/images/forest/mac-card.png)
 
@@ -8,18 +7,18 @@
 
 Short Summary
 
-- Phase 1 | Reconnaissance.
+- Phase 1   Reconnaissance.
 
     1.1 Running Nmap.
 
-- Phase 2 | Scanning.
+- Phase 2   Scanning.
     - 2.1 Scanning port **445.**
     - 2.2 Scanning port **88.**
-- Phase 3 | Gaining Access.
+- Phase 3   Gaining Access.
 
     3.1 Use **WinRM** to get access**.**
 
-- Phase 4 | Elevate privileges.
+- Phase 4   Elevate privileges.
 
     4.1 From **svc-alfresco** to **Administrator**
 
@@ -136,7 +135,7 @@ From the output, we extracted some information.
 3. From the services running we are dealing with an **Active Directory domain controller**.
 4. the domain name is **htb.local**
 
-Read this first if you don't know what Active Directory & Kerberos are and how they work.
+Read **[ THIS ](#extra)** first if you don't know what Active Directory & Kerberos are and how they work.
 
 ### 2. Scanning
 
