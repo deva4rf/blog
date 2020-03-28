@@ -17,11 +17,11 @@ Short Summary
 
         2.1.1 User portal scanning.
 
-        2.1.2 /blog scanning.
+        2.1.2 [/blog scanning.](#scanning-the-blog)
 
 - Phase 3 - Gaining Access.
 
-    3.1 Exploit Remote File Inclusion to get a reverse shell..
+    3.1 [Exploit Remote File Inclusion to get a reverse shell.](#gaining-access)
 
 - Phase 4 - Elevate privileges.
 
@@ -119,7 +119,7 @@ from these cards the first 3 cards will redirect us to the same page but:
 - **Our services** redirects to /**blog**
 - **User Portal** redirects to  **/User**
 
- ## Scanning /User link.
+## Scanning /User link.
 
 ![/images/Sniper/login.png](/images/Sniper/login.png)
 
@@ -227,7 +227,7 @@ And NOW WE ARE IN!.
 
 ### Elevate privileges
 
-  ### 1- From iusr to Chris 
+### 1- From iusr to Chris 
 
 Now we are **iusr** which has fewer privileges than normal users. so checking the **C:\Users\** we found another user called **Chris.**
 
@@ -255,7 +255,7 @@ so the commands to execute a program in the context of another user maybe like t
 
 Then we got our shell and here is the user flag.
 
-  ### 2- **Elevate priv from Chris to Root.**
+### 2- **Elevate priv from Chris to Root.**
 
 After some time exploring the folders, there is a file in the **C:\Docs** folder.
 
