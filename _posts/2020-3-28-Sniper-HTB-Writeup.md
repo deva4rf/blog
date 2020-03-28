@@ -10,7 +10,7 @@ Short Summary
 
 - Phase 1 - Reconnaissance.
 
-    1.1 Running Nmap.
+    1.1 Running [Nmap](#reconnaissance).
 
 - Phase 2 - Scanning.
     - 2.1 Scanning port **80.**
@@ -98,7 +98,7 @@ From the output, we extracted some information.
 
 I always start with web-based ports because most of the time they are higher risk than other services.
 
-**Scanning Port 80**
+### Scanning Port 80
 
 We start brute-forcing directories/files on the webserver to see if there are any hidden gems.
 
