@@ -25,9 +25,9 @@ Short Summary
 
 - Phase 4 - Elevate privileges.
 
-    4.1 From **iusr** to **Chris**
+    4.1 [From iusr to Chris](#1--from-iusr-to-chris)
 
-    4.2 From **Chris** to **root**
+    4.2 [From Chris to root](#2--elevate-priv-from-chris-to-root)
 
 ### **Summary**
 
