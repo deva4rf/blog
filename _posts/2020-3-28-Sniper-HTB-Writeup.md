@@ -10,10 +10,10 @@ Short Summary
 
 - Phase 1 - Reconnaissance.
 
-    1.1 Running [Nmap](#reconnaissance).
+    1.1 [Running Nmap](#reconnaissance).
 
 - Phase 2 - Scanning.
-    - 2.1 Scanning port **80.**
+    - 2.1 [Scanning port 80.](#scanning-port-80)
 
         2.1.1 User portal scanning.
 
@@ -119,7 +119,7 @@ from these cards the first 3 cards will redirect us to the same page but:
 - **Our services** redirects to /**blog**
 - **User Portal** redirects to  **/User**
 
- **Scanning /User link.**
+ ## Scanning /User link.
 
 ![/images/Sniper/login.png](/images/Sniper/login.png)
 
@@ -142,7 +142,7 @@ It is just the SVG animation icon nothing important here. so we fire gobuster ag
     gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.151/user -t 20 -H "PHPSESSID: 1qu8fu99kn9af8rnon6vj63tsa"
 
 letting gobuster finish its work, we start scanning the **blog.**
-
+### Scanning the blog
 ![/images/Sniper/blog.png](/images/Sniper/blog.png)
 
 So it's really a blog with dummy content as blog posts.
@@ -227,7 +227,7 @@ And NOW WE ARE IN!.
 
 ### Elevate privileges
 
-1- **From iusr to Chris**
+  ### 1- From iusr to Chris 
 
 Now we are **iusr** which has fewer privileges than normal users. so checking the **C:\Users\** we found another user called **Chris.**
 
@@ -255,7 +255,7 @@ so the commands to execute a program in the context of another user maybe like t
 
 Then we got our shell and here is the user flag.
 
-2- **Elevate priv from Chris to Root.**
+  ### 2- **Elevate priv from Chris to Root.**
 
 After some time exploring the folders, there is a file in the **C:\Docs** folder.
 
