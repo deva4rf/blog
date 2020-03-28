@@ -235,7 +235,7 @@ So let's go back to enumerate the web applications folder since we have access t
 
 ![/images/Sniper/user-folder.png](/images/Sniper/user-folder.png)
 
-**user** folder ****is interesting to us since we couldn't test it more on the webserver**, let's see its contents.**
+**user** folder is interesting to us since we couldn't test it more on the webserver, let's see its contents.**
 
 It has many files but db.php may have DB credentials hardcoded into the PHP file.
 
