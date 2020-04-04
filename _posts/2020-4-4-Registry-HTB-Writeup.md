@@ -10,12 +10,12 @@ Short Summary
 
 - Phase 1  Reconnaissance.
 
-    1.1 Running **nmap**.
+    1.1 [Running nmap.](#reconnaissance)
 
 - Phase 2  Scanning.
-    - 2.1 **registry.htb** scanning **.**
-    - 2.2 **docker.registry.htb** scanning
-- Phase 3   Gaining Access.
+    - 2.1 [registry.htb scanning](#scanning-registryhtb)
+    - 2.2 [docker.registry.htb](#scanning-dockerregistryhtb)
+- Phase 3  [Gaining Access](#gaining-access)
 
     3.1 SSHing as **bolt** user.. 
 
