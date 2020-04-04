@@ -200,12 +200,12 @@ You should now have a gzip file for every blob you downlaod, decompress them and
 from the blobs you should find:
 
 - A **passphrase for SSH key** from blob 1
-
-    #!/usr/bin/expect -f
+```#!/usr/bin/expect -f
     #eval `ssh-agent -s`
     spawn ssh-add /root/.ssh/id_rsa
     expect "Enter passphrase for /root/.ssh/id_rsa:"
     send "**GkOcz221Ftb3ugog**\n";
+ ```
 
 - **Config file** for **SSH** login from blob 1
 
