@@ -15,15 +15,15 @@ Short Summary
 - Phase 2  Scanning.
     - 2.1 [registry.htb scanning](#scanning-registryhtb)
     - 2.2 [docker.registry.htb](#scanning-dockerregistryhtb)
-- Phase 3  [Gaining Access](#gaining-access)
+- Phase 3  Gaining Access
 
-    3.1 SSHing as **bolt** user.. 
+    3.1 [SSHing as **bolt** user.](#gaining-access)
 
 - Phase 4   Elevate privileges.
 
-    4.1 From **bolt** user to **www-data** user.
+    4.1 [From bolt user to www-data user.](#from-bolt-to-www-root)
 
-    4.2 From **ww-data** user to **root.**
+    4.2 [from ww-data user to root.](#elevate-priv-from-www-data-to-root)
 
 ### **Summary**
 
@@ -200,7 +200,9 @@ You should now have a gzip file for every blob you downlaod, decompress them and
 from the blobs you should find:
 
 - A **passphrase for SSH key** from blob 1
-```#!/usr/bin/expect -f
+
+```
+    #!/usr/bin/expect -f
     #eval `ssh-agent -s`
     spawn ssh-add /root/.ssh/id_rsa
     expect "Enter passphrase for /root/.ssh/id_rsa:"
