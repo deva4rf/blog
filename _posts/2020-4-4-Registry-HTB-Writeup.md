@@ -107,7 +107,7 @@ I always start with web based ports because most of the time they are higher ris
 
 Port 80 main page:
 
-![/images/Registry/register-htb-80.png](/images//images/Registry/register-htb-80.png)
+![/images/Registry/register-htb-80.png](/images/Registry/register-htb-80.png)
 
 It is just the nginx default page. Nothing interesting here so we start directory brute-forcing using gobuster.
 
@@ -222,7 +222,7 @@ so now we have a possible username & his private SSH key and its passphrase , It
     ssh -i id_rsa bolt@10.10.10.159
     Enter passphrase for key 'id_rsa': GkOcz221Ftb3ugog
 
-![/images/Registry/bolt-user.png](/images//images/Registry/bolt-user.png)
+![/images/Registry/bolt-user.png](/images/Registry/bolt-user.png)
 
 Here is the user flag.
 
