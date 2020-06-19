@@ -222,7 +222,7 @@ so now we have a possible username & his private SSH key and its passphrase , It
     ssh -i id_rsa bolt@10.10.10.159
     Enter passphrase for key 'id_rsa': GkOcz221Ftb3ugog
 
-![/images//images/Registry/bolt-user.png](/images//images/Registry/bolt-user.png)
+![/images/Registry/bolt-user.png](/images//images/Registry/bolt-user.png)
 
 Here is the user flag.
 
