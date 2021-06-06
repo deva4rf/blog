@@ -60,35 +60,36 @@ Imagine you are building 2 applications let's stick with the real-time chat app 
 <thead>
 <tr>
 <th>System</th>
-<th style="">Availability</th>
-<th style="">Low-Latency</th>
-<th style="">Portability</th>
-<th style="">Security</th>
-<th style="">Scalability</th>
-<th style="">Compatibility</th>
+<th style="text-align:center; padding:20px">Availability</th>
+<th style="text-align:center; padding:20px">Low-Latency</th>
+<th style="text-align:center; padding:20px">Portability</th>
+<th style="text-align:center; padding:20px">Security</th>
+<th style="text-align:center; padding:20px">Scalability</th>
+<th style="text-align:center; padding:20px">Compatibility</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Real-time Chat app</td>
-<td style="">Critical</td>
-<td style="">Critical</td>
-<td style="">Medium</td>
-<td style="">High</td>
-<td style="">Critical</td>
-<td style="">Low</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">High</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Low</td>
 </tr>
 <tr>
 <td>E-commerce app</td>
-<td style="">High</td>
-<td style="">High</td>
-<td style="">Critical</td>
-<td style="">Critical</td>
-<td style="">Critical</td>
-<td style="">Meduim</td>
+<td style="text-align:center">High</td>
+<td style="text-align:center">High</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Meduim</td>
 </tr>
 </tbody>
 </table>
+
 
 
 ## What Is Scalability And Why It's Important?
