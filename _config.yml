@@ -1,4 +1,4 @@
-title: 3r3bu5 Personal Blog
+title: Ashraf Gehad's Personal Blog
 author: 3r3bu5
 email: deva4rf@gmail.com
 description: > # Just a software engineer and InfoSec Geek personal blog, you will find HTB,VulnHub writeups and random articles about security,engineering,..etc.
@@ -9,7 +9,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 plainwhite:
-  name: 3r3bu5/Ashraf Gehad
+  name: Ashraf Gehad / 3r3bu5
   tagline: Software Engineer, Security Enthusiast.
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
