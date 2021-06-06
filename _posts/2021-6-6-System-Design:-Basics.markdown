@@ -60,32 +60,32 @@ Imagine you are building 2 applications let's stick with the real-time chat app 
 <thead>
 <tr>
 <th>System</th>
-<th style="text-align:center">Availability</th>
-<th style="text-align:center">Low-Latency</th>
-<th style="text-align:center">Portability</th>
-<th style="text-align:center">Security</th>
-<th style="text-align:center">Scalability</th>
-<th style="text-align:center">Compatibility</th>
+<th style="">Availability</th>
+<th style="">Low-Latency</th>
+<th style="">Portability</th>
+<th style="">Security</th>
+<th style="">Scalability</th>
+<th style="">Compatibility</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Real-time Chat app</td>
-<td style="text-align:center">Critical</td>
-<td style="text-align:center">Critical</td>
-<td style="text-align:center">Medium</td>
-<td style="text-align:center">High</td>
-<td style="text-align:center">Critical</td>
-<td style="text-align:center">Low</td>
+<td style="">Critical</td>
+<td style="">Critical</td>
+<td style="">Medium</td>
+<td style="">High</td>
+<td style="">Critical</td>
+<td style="">Low</td>
 </tr>
 <tr>
 <td>E-commerce app</td>
-<td style="text-align:center">High</td>
-<td style="text-align:center">High</td>
-<td style="text-align:center">Critical</td>
-<td style="text-align:center">Critical</td>
-<td style="text-align:center">Critical</td>
-<td style="text-align:center">Meduim</td>
+<td style="">High</td>
+<td style="">High</td>
+<td style="">Critical</td>
+<td style="">Critical</td>
+<td style="">Critical</td>
+<td style="">Meduim</td>
 </tr>
 </tbody>
 </table>
