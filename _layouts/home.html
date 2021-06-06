@@ -30,11 +30,6 @@ layout: default
             <i class="icon-calendar"></i>
             {{ post.date | date: date_format }}</div>
         </div>
-        <div class="post">
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
-        </div>
       </li>
     {%- endfor -%}
   </ul>
