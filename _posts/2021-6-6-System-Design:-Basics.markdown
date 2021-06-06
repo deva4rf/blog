@@ -56,10 +56,40 @@ Imagine you are building 2 applications let's stick with the real-time chat app 
 
 **Most systems require the same non-functional attributes but with different levels, It is all about the trade-offs.**
 
-| System             | Availability | Low-Latency | Portability | Security | Scalability | Compatibility |
-| ------------------ | :----------: | :---------: | :---------: | :------: | :---------: | :-----------: |
-| Real-time Chat app |   Critical   |  Critical   |   Medium    |   High   |  Critical   |      Low      |
-| E-commerce app     |     High     |    High     |  Critical   | Critical |  Critical   |    Meduim     |
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>System</th>
+<th style="text-align:center">Availability</th>
+<th style="text-align:center">Low-Latency</th>
+<th style="text-align:center">Portability</th>
+<th style="text-align:center">Security</th>
+<th style="text-align:center">Scalability</th>
+<th style="text-align:center">Compatibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-time Chat app</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">High</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Low</td>
+</tr>
+<tr>
+<td>E-commerce app</td>
+<td style="text-align:center">High</td>
+<td style="text-align:center">High</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Critical</td>
+<td style="text-align:center">Meduim</td>
+</tr>
+</tbody>
+</table>
+
 
 ## What Is Scalability And Why It's Important?
 
