@@ -1,3 +1,14 @@
+---
+tags:
+- System Design
+- Scalability
+
+categories:
+- Development
+- System Design
+
+---
+
 ## What Is System Design / System Architecture?
 
 Simply, I like to define system design as **the trade-off decisions you make to build a well-running scalable system**.
